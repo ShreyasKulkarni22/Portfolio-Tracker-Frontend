@@ -1,0 +1,17 @@
+.chartbtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 600px;
+}
+
+.chartbtns >button{
+    height: fit-content;
+    width: fit-content;
+    font-size: smaller;
+}
+
+iframe{
+    border: 1px solid black;
+}
+

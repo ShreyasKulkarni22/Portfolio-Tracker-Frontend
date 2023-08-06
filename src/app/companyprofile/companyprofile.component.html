@@ -1,0 +1,35 @@
+<br /><br />
+<section class="container">
+    
+  <h1 style="font-weight: bold">Company Information</h1>
+  <h2>{{ companyprofile["companyName"] }}</h2>
+  <div class="stats">
+    <div class="industry">
+      <p class="title">Industry</p>
+      <p class="value">{{ companyprofile["industry"] }}</p>
+    </div>
+    <div class="sector">
+      <p class="title">Sector</p>
+      <p class="value">{{ companyprofile["sector"] }}</p>
+    </div>
+    <div class="employees">
+      <p class="title">Employees</p>
+      <p class="value">{{ companyprofile["fullTimeEmployees"] }}</p>
+    </div>
+  </div>
+  <br /><br />
+  <div class="description">
+    <p>{{ companyprofile["description"] }}</p>
+  </div>
+  <br />
+  <h1 style="font-weight: bold">Contact Information</h1>
+  <div class="contact">
+    <p class="value"><b>Address : &emsp;&emsp;&emsp;</b>{{ companyprofile["address"] }}</p>
+    <p class="value"><b>Phone : &emsp;&emsp;&emsp;</b>{{ companyprofile["phone"] }}</p>
+    <p class="value"><b>City : &emsp;&emsp;&emsp;</b>{{ companyprofile["city"] }}</p>
+    <p class="value"><b>State : &emsp;&emsp;&emsp;</b>{{ companyprofile["state"] }}</p>
+    <p class="value"><b>Zip : &emsp;&emsp;&emsp;</b>{{ companyprofile["zip"] }}</p>
+    <p class="value"><b>Website : &emsp;&emsp;&emsp;</b><a href="companyprofile['website']">{{ companyprofile["website"] }}</a></p>
+    <p class="value"><b>Country : &emsp;&emsp;&emsp;</b>{{ companyprofile["country"] }}</p>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<br><br>
+<div class="main">
+  <!-- <img [src]="src" width="200px" height="200px"/> -->
+  <div class="container">
+    <p id="name">
+      {{ companyprofile["companyName"] }} ({{ companyprofile["symbol"] }})
+    </p>
+    <br /><br />
+    <p id="price">
+      {{ companyprofile["price"] | currency }}
+    </p>
+    <br>
+    <p class="change"
+      style="color: lawngreen"
+      *ngIf="convertInt(companyprofile['changes']) > 0; else falseCondition"
+    >
+      {{ companyprofile["changes"] }}%
+    </p>
+  
+    <ng-template #falseCondition>
+      <p class="change" style="color: red">{{ companyprofile["changes"] }}%</p>
+    </ng-template>
+  </div>
+  
+  
+  <div class="container">
+      <div class="tabs">
+          <mat-tab-group>
+            <mat-tab label="Overview"
+              ><br /><br /><app-chart [Stock]="Stock"></app-chart
+            ></mat-tab>
+            <mat-tab label="Profile"><app-companyprofile [Stock]="Stock"></app-companyprofile></mat-tab>
+            <mat-tab label="Financials"><app-financials></app-financials></mat-tab>
+            <mat-tab label="News & Analysis"
+              ><app-newsanalysis></app-newsanalysis
+            ></mat-tab>
+          </mat-tab-group>
+        </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

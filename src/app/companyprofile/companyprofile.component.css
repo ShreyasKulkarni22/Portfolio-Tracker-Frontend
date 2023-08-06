@@ -1,0 +1,21 @@
+.stats{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.industry,.sector,.employees{
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    padding-left: 0%;
+}
+
+
+.title{
+    color: rgb(241, 183, 67);
+}
+
+
+

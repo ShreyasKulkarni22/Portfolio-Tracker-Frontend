@@ -1,0 +1,41 @@
+
+<section >
+    <div class="chartbtns">
+     
+        <button (click)="fetchData(Stock, '1')" class="btn " style="background-color:  rgb(252,206,115);">1D</button>
+        <button (click)="fetchData(Stock, '7')" class="btn " style="background-color:  rgb(252,206,115);">1W</button>
+        <button (click)="fetchData(Stock, '30')" class="btn " style="background-color:  rgb(252,206,115);">1M</button>
+        <button (click)="fetchData(Stock, '90')" class="btn " style="background-color:  rgb(252,206,115);">3M</button>
+        <button (click)="fetchData(Stock, '180')" class="btn " style="background-color:  rgb(252,206,115);">6M</button>
+        <button (click)="fetchData(Stock, '365')" class="btn " style="background-color:  rgb(252,206,115);">1Y</button>
+        <button (click)="fetchData(Stock, '1825')" class="btn " style="background-color:  rgb(252,206,115);">5Y</button>
+        <button (click)="switch()" class="btn " style="background-color:  rgb(252,206,115);" ><span class="material-icons" style="font-size: 19px;"> candlestick_chart </span></button>
+      </div>
+      <br>
+      <div style="overflow-x: scroll; height: 400px; width: 800px; margin-left:1vw" class="charts" *ngIf="flag=='line'">
+        <canvas #chartCanvas></canvas>
+      </div>
+      <iframe *ngIf="flag=='candle'"
+        [src]="finurl | mySafe"
+        frameborder="0"
+        scrolling="no"
+        width="800px"
+        height="400px"
+        style="margin-left: 1vw"
+      >
+      </iframe>
+      
+</section>
+
+
+<!-- <section>
+    
+<mat-tab-group>
+    <mat-tab label="Overview" ><app-overview></app-overview></mat-tab>
+    <mat-tab label="Profile"><app-companyprofile></app-companyprofile></mat-tab>
+    <mat-tab label="Financials" ><app-financials></app-financials></mat-tab>
+    <mat-tab label="News & Analysis" ><app-newsanalysis></app-newsanalysis></mat-tab>
+    
+  </mat-tab-group>
+</section>
+<router-outlet></router-outlet> -->

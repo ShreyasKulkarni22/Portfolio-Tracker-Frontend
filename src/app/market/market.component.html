@@ -12,16 +12,32 @@
     </div>
   </div>
 </header>
+
+<div class="search-bar">
+  <i class="fa fa-search"></i>
+  <input type="text" (input)="getResults(search.value)" #search placeholder="Search anything...">
+</div>
+<br>
+  <div *ngIf="search.value.length>0" class="container ">
+    <ul class="list-group " *ngFor="let result of queryresults">
+      <li class="list-group-item">{{result.name}}</li>
+    </ul>
+  </div>
+
+
+
+
+<br><br><br>
 <div class="container">
   <div class="row">
     <div class="col-8">
       <section class="chips">
         <h1><b>Explore Market Trends</b></h1>
-        <mat-chip-listbox>
-          <mat-chip [ariaChecked]="true"
+        <mat-chip-listbox >
+          <mat-chip 
             style="background-color: rgb(255, 208, 116)"
             (click)="filterStocks('active')" 
-            ><mat-icon style="vertical-align: text-bottom; height: 20px">
+            selected ><mat-icon style="vertical-align: text-bottom; height: 20px">
               bar_chart</mat-icon
             >
             Most Active</mat-chip
@@ -62,7 +78,8 @@
           >
         </mat-chip-listbox>
 
-        <div *ngIf="activeStocks?.length > 0">
+        <div *ngIf="activeStocks?.length > 0" class="chipdatalist">
+          <br>
           <h2>Most Active Stocks</h2>
           <h4>
             The stocks or funds with the highest trading volume (in shares)
@@ -71,7 +88,7 @@
           <div class="table-responsive">
             <table class="table table-hover">
               <tbody>
-                <tr *ngFor="let stock of activeStocks">
+                <tr *ngFor="let stock of activeStocks" (click)="open(stock.symbol)">
                   <td>{{ stock.symbol }}</td>
                   <td>{{ stock.name }}</td>
                   <td>{{ stock.price | currency }}</td>
@@ -83,7 +100,8 @@
           </div>
         </div>
 
-        <div *ngIf="gainerStocks?.length > 0">
+        <div *ngIf="gainerStocks?.length > 0" class="chipdatalist">
+          <br>
           <h2>Gainers</h2>
           <h4>
             The top gaining stocks or funds (by percent change) during the
@@ -92,7 +110,7 @@
           <div class="table-responsive">
             <table class="table table-hover">
               <tbody>
-                <tr *ngFor="let stock of gainerStocks">
+                <tr *ngFor="let stock of gainerStocks" (click)="open(stock.symbol)">
                   <td>{{ stock.symbol }}</td>
                   <td>{{ stock.name }}</td>
                   <td>{{ stock.price | currency }}</td>
@@ -104,7 +122,8 @@
           </div>
         </div>
 
-        <div *ngIf="loserStocks?.length > 0">
+        <div *ngIf="loserStocks?.length > 0" class="chipdatalist">
+          <br>
           <h2>Losers</h2>
           <h4>
             The top losing stocks or funds (by percent change) during the
@@ -113,7 +132,7 @@
           <div class="table-responsive">
             <table class="table table-hover">
               <tbody>
-                <tr *ngFor="let stock of loserStocks">
+                <tr *ngFor="let stock of loserStocks" (click)="open(stock.symbol)">
                   <td>{{ stock.symbol }}</td>
                   <td>{{ stock.name }}</td>
                   <td>{{ stock.price | currency }}</td>
@@ -125,13 +144,14 @@
           </div>
         </div>
 
-        <div *ngIf="forexList?.length > 0">
+        <div *ngIf="forexList?.length > 0" class="chipdatalist">
+          <br>
           <h2>Foreign Exchange Rates</h2>
           <h4>Top currency pairs globally</h4>
           <div class="table-responsive">
             <table class="table table-hover">
               <tbody>
-                <tr *ngFor="let curr of forexList">
+                <tr *ngFor="let curr of forexList" >
                   <td>{{ curr.ticker }}</td>
                   <td>{{ curr.open | currency }}</td>
                   <td>{{ curr.changes.toFixed(3) }}%</td>
@@ -163,21 +183,31 @@
   </div>
 </div>
 
-<!-- <section>
-    <h2>Sector-Wise Market Performance</h2>
+<section class="sector col-4">
+    <h2><b>Sector-Wise Market Performance</b></h2>
     <div class="index" *ngFor="let index of indices">
         <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title>{{index.sector}}</mat-card-title>
-              <h3>Data {{index.sector}}</h3>
             </mat-card-header>
             <mat-card-content>
                 <br>
-              <p  [style.color]="'green'">% Change:-  {{index.changesPercentage}}</p>
+              <p  [style.color]="'green'">% Change:  {{index.changesPercentage}}</p>
             </mat-card-content>
 
           </mat-card>
       </div>
       <br><br><br><br>
 
-  </section> -->
+  </section>
+
+  <!-- <div class="portfolio-list">
+  <div
+    class="portfolio-card"
+    *ngFor="let portfolio of portfolios"
+    
+  >
+    <h3>{{ portfolio }}</h3>
+  </div>
+</div> -->
+

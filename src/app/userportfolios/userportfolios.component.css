@@ -1,3 +1,5 @@
+
+
 .container1 {
     display: flex;
     align-items: center;
@@ -363,3 +365,44 @@ h6 {
     margin-top: 20vh;
     margin-left: 20vw;
 }
+
+
+
+
+
+
+.portfolio-card {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .portfolio-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  .delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .portfolio-card:hover .delete-btn {
+    opacity: 1;
+  }
+  .view-btn {
+    display: block;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .portfolio-card:hover .view-btn {
+    opacity: 1;
+  }
+
+
+
+

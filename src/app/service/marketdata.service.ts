@@ -9,7 +9,7 @@ import {Chart,ChartModule} from 'angular-highcharts'
 })
 export class MarketdataService {
   baseurl="https://financialmodelingprep.com/api/v3/"
-  key="36290889253a9d238722322fdb6ddc5c"
+  key="fe27eff79e144289d69c9121a0fe8677"
 
   finurl="https://finnhub.io/api/v1/news?category=general&token=cj4t6b9r01qq6hgdp6o0cj4t6b9r01qq6hgdp6og"
   constructor(private http:HttpClient) { }
@@ -68,5 +68,10 @@ export class MarketdataService {
   getLogo(stockSymbol:string){
     const apiUrl=`https://finnhub.io/api/v1/stock/profile2?symbol=${stockSymbol}&token=cj4t6b9r01qq6hgdp6o0cj4t6b9r01qq6hgdp6og`
     return this.http.get(apiUrl)
+  }
+
+
+  getResultsBySearch(query:string){
+    return this.http.get(this.baseurl+`search?query=${query}&limit=10exchange=NASDAQ&apikey=${this.key}`)
   }
 }

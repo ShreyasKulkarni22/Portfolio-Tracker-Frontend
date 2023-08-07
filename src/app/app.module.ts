@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
+
 import {
   FormBuilder,
   FormGroup,
@@ -60,7 +61,9 @@ import { FinancialsComponent } from './financials/financials.component';
 import { StockanalysisComponent } from './stockanalysis/stockanalysis.component';
 import { SafePipeModule } from 'safe-pipe';
 import { SharedPipesModule } from './SafePipeModule';
-
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatOptionModule } from '@angular/material/core';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,7 +102,10 @@ import { SharedPipesModule } from './SafePipeModule';
     ChartModule,
     StockChartModule,
     MatTabsModule,
-    SharedPipesModule
+    SharedPipesModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatAutocompleteModule
   ],
   providers: [
     CandleSeriesService,

@@ -72,6 +72,6 @@ export class MarketdataService {
 
 
   getResultsBySearch(query:string){
-    return this.http.get(this.baseurl+`search?query=${query}&limit=10exchange=NASDAQ&apikey=${this.key}`)
+    return this.http.get(this.baseurl+`search?query=${query}&limit=10&exchange=NASDAQ&apikey=${this.key}`)
   }
 }

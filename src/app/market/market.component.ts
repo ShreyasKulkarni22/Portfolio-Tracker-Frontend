@@ -55,35 +55,35 @@ portfolios: any=['Portfolio1','Portfolio2','Portfolio3','Portfolio4'];
     // })
     
     
-    await this.getMajorIndices().then(res => {
-      this.indices = res
-    })
-    console.log('indices data oninit', this.indices);
+    // await this.getMajorIndices().then(res => {
+    //   this.indices = res
+    // })
+    // console.log('indices data oninit', this.indices);
     
-    this.marketdata.getMostActives().subscribe(res=>{
-      this.actives=res
-      this.actives=this.actives.slice(0,30)
-    })
+    // this.marketdata.getMostActives().subscribe(res=>{
+    //   this.actives=res
+    //   this.actives=this.actives.slice(0,30)
+    // })
 
-    this.marketdata.getMostGainers().subscribe(res=>{
-      this.gainers=res
-      this.gainers=this.gainers.slice(0,30)
-    })
+    // this.marketdata.getMostGainers().subscribe(res=>{
+    //   this.gainers=res
+    //   this.gainers=this.gainers.slice(0,30)
+    // })
 
-    this.marketdata.getMostLosers().subscribe(res=>{
-      this.losers=res
-      this.losers=this.losers.slice(0,30)
-    })
+    // this.marketdata.getMostLosers().subscribe(res=>{
+    //   this.losers=res
+    //   this.losers=this.losers.slice(0,30)
+    // })
 
-    this.marketdata.getForexRates().subscribe(res=>{
-      this.forex=res
-      this.forex=this.forex.slice(0,30)
-    })
+    // this.marketdata.getForexRates().subscribe(res=>{
+    //   this.forex=res
+    //   this.forex=this.forex.slice(0,30)
+    // })
 
-    this.marketdata.getGeneralNews().subscribe(res=>{
-      this.news=res
-      this.news=this.news.slice(0,6)
-    })
+    // this.marketdata.getGeneralNews().subscribe(res=>{
+    //   this.news=res
+    //   this.news=this.news.slice(0,6)
+    // })
 
     
   }

@@ -9,7 +9,7 @@ import {Chart,ChartModule} from 'angular-highcharts'
 })
 export class MarketdataService {
   baseurl="https://financialmodelingprep.com/api/v3/"
-  key="fe27eff79e144289d69c9121a0fe8677"
+  key="f551ef806631c0f25b1e797f8c82aacd"
 
   finurl="https://finnhub.io/api/v1/news?category=general&token=cj4t6b9r01qq6hgdp6o0cj4t6b9r01qq6hgdp6og"
   constructor(private http:HttpClient) { }

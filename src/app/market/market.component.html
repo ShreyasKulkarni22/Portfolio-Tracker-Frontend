@@ -20,7 +20,7 @@
 <br>
   <div *ngIf="search.value.length>0" class="container ">
     <ul class="list-group " *ngFor="let result of queryresults">
-      <li class="list-group-item">{{result.name}}</li>
+      <li class="list-group-item" (click)="open(result.symbol)">{{result.name}}</li>
     </ul>
   </div>
 

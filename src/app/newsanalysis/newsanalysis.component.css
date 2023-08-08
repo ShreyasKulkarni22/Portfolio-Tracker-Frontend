@@ -1,0 +1,20 @@
+
+  mat-card-content{
+    width: fit-content;
+  }
+
+  p{
+    font-size: medium;
+    color: black;
+  }
+  
+
+  .stocknews{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  img{
+    padding-bottom: 12px;
+  }

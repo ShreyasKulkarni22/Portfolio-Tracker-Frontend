@@ -90,9 +90,9 @@ portfolios: any=['Portfolio1','Portfolio2','Portfolio3','Portfolio4'];
 
   getResults(search:string){
     
-    this.marketdata.getResultsBySearch(search).subscribe(res=>{
-      this.queryresults=res
-    })
+    // this.marketdata.getResultsBySearch(search).subscribe(res=>{
+    //   this.queryresults=res
+    // })
   }
 
   logout(){

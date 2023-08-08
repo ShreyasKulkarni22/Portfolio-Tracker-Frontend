@@ -25,17 +25,39 @@
       >
       </iframe>
       
+
+
+<br><br><br>
+<div class="details">
+  <div class="d1">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><span class="left">Day's Range</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="right">  {{companyquote["dayLow"]}} - {{companyquote["dayHigh"]}} </span></li>
+      <li class="list-group-item"><span class="left">52 wk Range</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["yearLow"]}} - {{companyquote["yearHigh"]}}</span></li>
+      <li class="list-group-item"><span class="left">Prev. Close</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["previousClose"]}}</span></li>
+      <li class="list-group-item"><span class="left">Open</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["open"]}}</span></li>
+      <li class="list-group-item"><span class="left">Volume</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["volume"]}}</span></li>
+      <li class="list-group-item"><span class="left">Exchange</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["exchange"]}}</span></li>
+      <li class="list-group-item"><span class="left">Market Cap</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["marketCap"]}}</span></li>
+      <li class="list-group-item"><span class="left">Beta</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyprof["beta"]}}</span></li>
+      <li class="list-group-item"><span class="left">P/E Ratio</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["pe"]}}</span></li>
+    </ul>
+  </div>
+  <div class="d1">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><span class="left">Type</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> Equity</span></li>
+      <li class="list-group-item"><span class="left">Market</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> USA</span></li>
+      <li class="list-group-item"><span class="left">ISIN</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyprof["isin"]}}</span></li>
+      <li class="list-group-item"><span class="left">CUSIP</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyprof["cusip"]}}</span></li>
+      <li class="list-group-item"><span class="left">Shares Outstanding</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["sharesOutstanding"]}}</span></li>
+      <li class="list-group-item"><span class="left">Industry</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyprof["industry"]}}</span></li>
+      <li class="list-group-item"><span class="left">EPS</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["eps"]}}</span></li>
+      <li class="list-group-item"><span class="left">Next Earnings Date</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["earningsAnnouncement"].slice(0,10)}}</span></li>
+      <li class="list-group-item"><span class="left">Avg. Volume </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="right"> {{companyquote["avgVolume"]}}</span></li>
+    </ul>
+  </div>
+</div>
 </section>
 
 
-<!-- <section>
-    
-<mat-tab-group>
-    <mat-tab label="Overview" ><app-overview></app-overview></mat-tab>
-    <mat-tab label="Profile"><app-companyprofile></app-companyprofile></mat-tab>
-    <mat-tab label="Financials" ><app-financials></app-financials></mat-tab>
-    <mat-tab label="News & Analysis" ><app-newsanalysis></app-newsanalysis></mat-tab>
-    
-  </mat-tab-group>
-</section>
-<router-outlet></router-outlet> -->
+
+<router-outlet></router-outlet>

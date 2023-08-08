@@ -30,6 +30,9 @@ export class ChartComponent implements OnInit {
   finurl:any
 
   flag:string='line'
+  companyquote: any;
+  companyprof: any;
+  recommendationurl: any;
   constructor(
     private market: MarketdataService,
     private elementRef: ElementRef,
@@ -43,7 +46,12 @@ export class ChartComponent implements OnInit {
     //   this.Stock = res['name'];
     // });
     this.finurl=`https://widget.finnhub.io/widgets/stocks/chart?symbol=${this.Stock}&amp;watermarkColor=%231db954&amp;backgroundColor=white&amp;textColor=black`
+
+    this.recommendationurl=`https://widget.finnhub.io/widgets/recommendation?symbol=${this.Stock}`
     this.fetchData(this.Stock, '7');
+
+    this.getCompanyQuote(this.Stock)
+    this.getCompanyProfile(this.Stock)
   }
 
   switch(){
@@ -55,6 +63,9 @@ export class ChartComponent implements OnInit {
     }
   }
 
+  getRecommendationUrl(){
+    return this.recommendationurl
+  }
   getUrl(){
     return this.finurl
   }
@@ -149,5 +160,23 @@ export class ChartComponent implements OnInit {
   }
 
 
+
+
+  getCompanyQuote(stockSymbol:string){
+    this.market.getCompanyQuote(stockSymbol).subscribe(res=>{
+      this.companyquote=res
+      this.companyquote=this.companyquote[0]
+      console.log(this.companyquote);
+      
+    })
+  }
   
+  getCompanyProfile(stockSymbol:string){
+    this.market.getCompanyProfile(stockSymbol).subscribe(res=>{
+      // console.log(res);
+      
+      this.companyprof=res
+      this.companyprof=this.companyprof[0]
+    })
+  }
 }

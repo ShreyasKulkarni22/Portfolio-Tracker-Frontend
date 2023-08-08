@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MarketdataService } from '../service/marketdata.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-stockanalysis',
@@ -15,7 +16,7 @@ export class StockanalysisComponent {
   }
     src:any
     companyprofile:any
-    constructor(private market:MarketdataService,private route:ActivatedRoute){}
+    constructor(private market:MarketdataService,private route:ActivatedRoute,private auth:AuthService){}
   
     ngOnInit(): void {
       this.route.queryParams.subscribe(res=>{
@@ -35,5 +36,9 @@ export class StockanalysisComponent {
         // })
         
       })
+    }
+
+    logout(){
+      this.auth.logout()
     }
 }

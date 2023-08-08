@@ -64,6 +64,8 @@ import { SharedPipesModule } from './SafePipeModule';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatListModule} from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,7 +107,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     SharedPipesModule,
     MatFormFieldModule,
     MatOptionModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatListModule
   ],
   providers: [
     CandleSeriesService,

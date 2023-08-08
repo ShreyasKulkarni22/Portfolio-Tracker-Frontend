@@ -458,7 +458,11 @@ table{
     }
   }
   
-
+  /* main */
+  .main{
+    position: absolute;
+    z-index: -1;
+  }
   /* searchbar */
 
   .search-bar {
@@ -482,15 +486,15 @@ table{
   }
 
 
-  .mylist{
+  .result{
+    width: 300px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30vw;
-    gap: 1px;
-    position: absolute;
-    /* overflow: hidden; */
     z-index: 1;
-    height: 40px;
+    position:absolute;
+    margin-left: 38vw;
+    margin-top: 0px;
   }
 
+  .list-group-item:hover{
+        background-color: #ffc451;;
+  }

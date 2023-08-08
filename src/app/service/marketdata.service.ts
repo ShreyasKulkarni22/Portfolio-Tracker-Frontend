@@ -9,9 +9,10 @@ import {Chart,ChartModule} from 'angular-highcharts'
 })
 export class MarketdataService {
   baseurl="https://financialmodelingprep.com/api/v3/"
-  key="f551ef806631c0f25b1e797f8c82aacd"
+  key="dac7c52ba1612c2c1402633f4b2f5a1e"
 
-  finurl="https://finnhub.io/api/v1/news?category=general&token=cj4t6b9r01qq6hgdp6o0cj4t6b9r01qq6hgdp6og"
+  finkey="cj4t6b9r01qq6hgdp6o0cj4t6b9r01qq6hgdp6og"
+  finurl=`https://finnhub.io/api/v1/news?category=general&token=${this.finkey}`
   constructor(private http:HttpClient) { }
 
   getMajorIndices(){
@@ -74,4 +75,15 @@ export class MarketdataService {
   getResultsBySearch(query:string){
     return this.http.get(this.baseurl+`search?query=${query}&limit=10&exchange=NASDAQ&apikey=${this.key}`)
   }
+
+
+  getCompanyQuote(stockSymbol:string){
+    return this.http.get(this.baseurl+`quote/${stockSymbol}?apikey=`+this.key)
+  }
+
+  getStockNews(stockSymbol:string){
+    const apiUrl=`https://finnhub.io/api/v1/company-news?symbol=${stockSymbol}&from=2021-09-01&to=2024-09-09&token=${this.finkey}`
+    return this.http.get(apiUrl)
+  }
+  
 }

@@ -1,3 +1,17 @@
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+    <h1 class="logo me-auto me-lg-0">
+      <a href="index.html">Investify<span>.</span></a>
+    </h1>
+
+    <div class="navbuttons">
+      <a routerLink="/portfolios" class="get-started-btn scrollto"
+        >Your Portfolios</a
+      >
+      <a (click)="logout()" class="get-started-btn scrollto">Log Out</a>
+    </div>
+  </div>
+</header>
 <br><br>
 <div class="main">
   <!-- <img [src]="src" width="200px" height="200px"/> -->
@@ -32,10 +46,20 @@
             <mat-tab label="Profile"><app-companyprofile [Stock]="Stock"></app-companyprofile></mat-tab>
             <mat-tab label="Financials"><app-financials></app-financials></mat-tab>
             <mat-tab label="News & Analysis"
-              ><app-newsanalysis></app-newsanalysis
+              ><app-newsanalysis [Stock]="Stock"></app-newsanalysis
             ></mat-tab>
           </mat-tab-group>
         </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 <router-outlet></router-outlet>
